@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 2.0'
 # Heroku wants this
 gem 'rails_12factor'
 
+#Heroku, again
+gem 'puma'
+
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -56,7 +59,5 @@ group :development, :test do
 
   # Ensure consistent styling
   gem 'rubocop', require: false
-
-  gem 'puma'
 
 end
