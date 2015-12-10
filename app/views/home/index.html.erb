@@ -1,4 +1,4 @@
-<h1>Contactually Lite</h1>
+<h1>Dashboard - Contactually Lite</h1>
 
 <table>
   <thead>
@@ -17,12 +17,9 @@
       <tr>
         <td><%= contact.first_name %></td>
         <td><%= contact.last_name %></td>
+        <td><%= contact.phone_number %></td>
         <td><%= contact.email_address %></td>
-        <% if false %>
-        <td><%= link_to 'Show', widget %></td>
-        <td><%= link_to 'Edit', edit_widget_path(widget) %></td>
-        <td><%= link_to 'Destroy', widget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+        <td><%= contact.company_name %></td>
       </tr>
     <% end %>
   </tbody>
