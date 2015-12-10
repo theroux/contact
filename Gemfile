@@ -3,7 +3,11 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
+# sqlite3 is not supported by Heroku, move to development group
+# http://stackoverflow.com/questions/19393529/heroku-failing-to-deploy-because-of-sqlite3
+#gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -42,6 +46,8 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background.
   # Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'sqlite3'
 
   # Ensure consistent styling
   gem 'rubocop', require: false
