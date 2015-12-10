@@ -6,9 +6,10 @@ ruby '2.2.2'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
 
-# sqlite3 is not supported by Heroku, move to development group
+# sqlite3 is not supported by Heroku, use postgresql instead
 # http://stackoverflow.com/questions/19393529/heroku-failing-to-deploy-because-of-sqlite3
 #gem 'sqlite3'
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -26,6 +27,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+
+# Heroku wants this
+gem 'rails_12factor'
+
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -48,8 +53,6 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background.
   # Read more: https://github.com/rails/spring
   gem 'spring'
-
-  gem 'sqlite3'
 
   # Ensure consistent styling
   gem 'rubocop', require: false
