@@ -56,4 +56,7 @@ group :development, :test do
 
   # Ensure consistent styling
   gem 'rubocop', require: false
+
+  gem 'puma'
+
 end
