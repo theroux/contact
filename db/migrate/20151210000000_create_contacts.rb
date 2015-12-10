@@ -7,7 +7,7 @@ class CreateContacts < ActiveRecord::Migration
       t.integer :phone_number
       t.string :company_name
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
