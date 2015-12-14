@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20151210225356) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email_address"
-    t.integer  "phone_number"
+    t.string   "phone_number"
     t.string   "company_name"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

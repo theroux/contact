@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :contacts
-  resources :contacts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -55,6 +54,16 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  # Modified from
+  # https://richonrails.com/articles/importing-csv-files
+  ContactuallyLite::Application.routes.draw do
+    resources :contacts do
+      collection { post :import }
+  end
+
+  root to: "home#index"
+end
  
-  root 'home#index'
+  #root 'home#index'
 end

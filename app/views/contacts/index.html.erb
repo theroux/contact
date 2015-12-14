@@ -1,5 +1,13 @@
 <% provide(:title, "Contacts") %>
+<%= flash[:notice] %>
 
+<div>
+  <h3>Import a CSV File</h3>
+  <%= form_tag import_contacts_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
+</div>
 
 <p id="notice"><%= notice %></p>
 

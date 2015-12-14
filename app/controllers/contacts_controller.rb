@@ -61,6 +61,19 @@ class ContactsController < ApplicationController
     end
   end
 
+
+  # https://richonrails.com/articles/importing-csv-files
+  def import
+    Contact.import(params[:file])
+    redirect_to root_url, notice: "Contacts imported."
+    #begin
+    # Contact.import(params[:file])
+    #  redirect_to root_url, notice: "Contacts imported."
+    #rescue
+    #  redirect_to root_url, notice: "Invalid TSV file format."
+    #end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_contact
