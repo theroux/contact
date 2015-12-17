@@ -39,11 +39,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Phone validation
 # https://github.com/daddyz/phonelib
-#gem 'phonelib'
+gem 'phonelib'
 
 # Phone validation take 2
 # https://github.com/carr/phone
-gem 'phone'
+# gem 'phone'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
