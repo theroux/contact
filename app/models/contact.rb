@@ -48,6 +48,7 @@ class Contact < ActiveRecord::Base
 
 				entry.first_name = row[:first_name]
 				entry.last_name = row[:last_name]
+				entry.email_address = row[:email_address]
 				entry.phone_number = phoneNum
 				entry.extension = ext
 				entry.international = intl
@@ -65,16 +66,6 @@ class Contact < ActiveRecord::Base
 					company_name:  row[:company_name]
 		    )
 =end
-
-		    #contact_hash = row.to_hash # exclude the price field
-
-		    #contact = Contact.where(id: contact_hash["id"])
-
-		    #if contact.count == 1
-		    #	contact.first.update_attributes(contact_hash)
-		    #else
-		    #    Contact.create!(contact_hash)
-		    #end # end if !product.nil
 
 	    end # end CSV.foreach
   	end # end self.import(file)
