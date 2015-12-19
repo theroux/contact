@@ -32,7 +32,6 @@
         <td><%= contact.phone_number %></td>
         <td><%= contact.extension %></td>
         <td><%= contact.company_name %>
-        <%= button_to 'Delete', contact, method: 'delete', form: { "data-type" => "json" }, remote: true, form_class: 'delete-contact-form' %>
         <%= link_to 'Delete', contact, method: 'delete', "data-type" => "json", remote: true, class: 'delete-contact' %>
       </td>
       </tr>

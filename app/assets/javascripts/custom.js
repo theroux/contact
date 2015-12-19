@@ -1,21 +1,25 @@
-$(document).ready( function() {
-
-  console.log('custom.js')
-
-  $('.delete-contact-form').on('ajax:success', function(event, xhr, status, error) {
-      console.log('deleted w/ form');
-      $(this).closest('tr').fadeOut();
-  });
-  $('.delete-contact-form').on('ajax:error', function() {
-      console.log('Error deleting contact w form');
+var conctactLite = (function () {
+  $(function(){
+  	conctactLite.init();
   });
 
-  $('.delete-contact').on('ajax:success', function(event, xhr, status, error) {
-      console.log('deleted w/ link');
-      $(this).closest('tr').fadeOut();
-  });
-  $('.delete-contact').on('ajax:error', function(event, xhr, status, error) {
-      console.log('Error deleting contact w link');
-  });
+  var _bindings = function() {
+    console.log('bindings');
+    var $deleteLink = $('.delete-contact');
+    $deleteLink.on('ajax:success', function(event, xhr, status, error) {
+        console.log('deleted w/ link');
+        $(this).closest('tr').fadeOut();
+    });
+    $deleteLink.on('ajax:error', function(event, xhr, status, error) {
+        console.log('Error deleting contact w link');
+    });
+  };
 
-});
+  //Public methods
+  return {
+    init: function () {
+      console.log('init');
+      _bindings();
+    }
+  };
+})();
