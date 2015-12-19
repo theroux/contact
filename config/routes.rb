@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :contacts
+
+  resources :contacts do
+    collection { post :import }
+  end
+
+  root to: 'home#index'
+
+end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -57,6 +64,7 @@ Rails.application.routes.draw do
 
   # Modified from
   # https://richonrails.com/articles/importing-csv-files
+=begin
   ContactuallyLite::Application.routes.draw do
     resources :contacts do
       collection { post :import }
@@ -64,6 +72,6 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 end
- 
+=end
   #root 'home#index'
-end
+#end

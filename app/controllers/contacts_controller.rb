@@ -57,7 +57,7 @@ class ContactsController < ApplicationController
     @contact.destroy
     respond_to do |format|
       format.html { redirect_to root_url, notice: 'Contact was successfully destroyed.' }
-      format.json { head :no_content }
+      format.json { render json: @contact }
     end
   end
 

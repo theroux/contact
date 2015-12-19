@@ -10,7 +10,7 @@
   <% end %>
 </div>
 
-<table>
+<table id="contact-data">
   <thead>
     <tr>
       <th>First Name</th>
@@ -31,7 +31,10 @@
         <td><%= contact.email_address %></td>
         <td><%= contact.phone_number %></td>
         <td><%= contact.extension %></td>
-        <td><%= contact.company_name %> <%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= contact.company_name %>
+        <%= button_to 'Delete', contact, method: 'delete', form: { "data-type" => "json" }, remote: true, form_class: 'delete-contact-form' %>
+        <%= link_to 'Delete', contact, method: 'delete', "data-type" => "json", remote: true, class: 'delete-contact' %>
+      </td>
       </tr>
     <% end %>
   </tbody>
