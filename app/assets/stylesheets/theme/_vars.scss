@@ -1,0 +1,33 @@
+// Colors
+$accent: #f37561; // Contactually brand color (orange)
+$accent-shift: #d16b61; // Darker, for hover effect, etc
+
+$accent-secondary: #3097d2; // CTA (blue), use sparingly.
+
+$text-dark: #666666;
+$text-medium: #8d9fb0;
+$text-lighter: #c9d6e3;
+$text-lightest: #ffffff;
+
+$bg-darkest : #1f262d;
+$bg-darker: #2c3640;
+$bg-medium: #435463;
+$bg-lighter: #ecedef;
+$bg-lightest: #ffffff;
+
+$bg-accent-wash: #cedeed;
+
+// Fonts
+$body: 'Open Sans', sans-serif;
+$heading: 'Lato', sans-serif;
+
+$font-size-default: 16px;
+$font-size-smaller: 0.875rem; // 14px
+$font-size-nano: 0.75rem; // 12px
+
+$font-size-larger: 1.25rem;
+$font-size-huge: 2rem;
+
+html, body {
+  background-color: $bg-lightest;
+}

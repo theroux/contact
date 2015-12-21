@@ -1,0 +1,36 @@
+// Local vars
+
+$smContainer : 100%;
+$mdContainer : $medium-lower - $gutter*2;
+$lgContainer :$large-lower - $gutter*2;
+$xlContainer : $xl-lower - $gutter*2;
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+@mixin container {
+  @include clearfix;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: $gutter;
+  padding-right: $gutter;
+  width: 100%;
+}
+%container-fixed {
+  @include container;
+  @media #{$medium-only} {
+    width: $mdContainer;
+  }
+  @media #{$large-only} {
+    width: $lgContainer;
+  }
+  @media #{$xl-up} {
+    width: $xlContainer;
+  }
+}
+%container-fluid {
+  @include container;
+}

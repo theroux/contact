@@ -1,15 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title><%= yield(:title) %> - Contactually Lite</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic|Lato:300,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
+  <div class="header--outer">
+    <header class="header" role="banner">
+      <div class="logo">
+        <%= image_tag("lite_logo-sm.png", alt:"Logo", class:"logo--image") %>
+      </div>
+    </header>
+  </div>
+  <div class="wrapper">
 
-<%= yield %>
+    <%= yield %>
+  </div>
+
+  <div class="footer--outer">
+    <footer class="footer">
+       <div class="footer--meta">
+         <span class="copyright">&copy; <%= Date.today.year %></span>
+         <span class="dc-pride">- Proudly made in DC <%= image_tag("dc-flag.png", class:"dc-flag") %></span>
+      </div>
+    </footer>
+  </div>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 </body>
 </html>

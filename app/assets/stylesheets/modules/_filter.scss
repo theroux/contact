@@ -1,0 +1,7 @@
+.filter {
+  @extend %container-fixed;
+
+  &--outer {
+    padding: 2rem 0;
+  }
+}

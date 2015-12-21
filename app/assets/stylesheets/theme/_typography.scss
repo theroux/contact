@@ -1,0 +1,32 @@
+// Baseline settings
+html {
+  color: $text-dark;
+  font-family: $body;
+  font-size: $font-size-default;
+}
+body {
+  font-size: 1rem;
+}
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+// Helpers
+
+%heading {
+  font-family: $heading;
+}
+%heading-section {
+  @extend %heading;
+  margin: 0.5em 0;
+}
+%details {
+  font-size: $font-size-smaller;
+}
+
+%cta {
+  font-family: $heading;
+  text-transform: uppercase;
+}
+%legal {
+  font-size:  $font-size-nano;
+}

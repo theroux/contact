@@ -1,0 +1,20 @@
+.header {
+  @extend %container-fixed;
+
+  &--outer {
+      padding: 1rem 0;
+  }
+}
+.logo {
+
+  text-align: center;
+
+  @media #{$large-up} {
+    text-align: left;
+  }
+
+  &--image {
+    max-width: 307px;
+    width: 100%;
+  }
+}

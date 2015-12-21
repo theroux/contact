@@ -1,0 +1,56 @@
+.data {
+  @extend %container-fixed;
+
+  &--outer {
+    padding: 2rem 0;
+  }
+  &--list {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.contact {
+  border-bottom: 1px solid;
+  margin: 0 0 0.5em 0;
+  padding: 0 0 0.5em 0;
+
+  &--person {
+    float: left;
+    padding: 0 0.5em 0 0;
+    width: 90%;
+    @media #{$large-up} {
+        width: 40%;
+    }
+
+  }
+  &--details {
+    float: left;
+    padding: 0 0.5em 0 0;
+    width: 90%;
+
+    @media #{$large-up} {
+        width: 40%;
+    }
+  }
+  &--actions {
+    float: right;
+    text-align: right;
+    width: 10%;
+
+
+    .delete-contact {
+      .text {
+        display: none;
+        @media #{$large-up} {
+            display: inline;
+        }
+      }
+      .icon {
+        @media #{$large-up} {
+            display: none;
+        }
+      }
+    }
+  }
+
+}

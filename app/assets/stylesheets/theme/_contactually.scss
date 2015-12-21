@@ -1,0 +1,90 @@
+.header {
+  &--outer {
+    background-color: $bg-medium;
+  }
+}
+
+.import {
+  @extend %container-fixed;
+
+  &--outer {
+    background-color: $bg-lighter;
+  }
+  &--heading {
+    @extend %heading-section;
+    font-size: $font-size-larger;
+  }
+}
+.filter {
+  @extend %container-fixed;
+
+  &--outer {
+    background-color: $bg-accent-wash;
+  }
+  &--heading {
+    @extend %heading-section;
+    font-size: $font-size-larger;
+  }
+}
+.data {
+  &--heading {
+    @extend %heading-section;
+    font-size: $font-size-huge;
+  }
+}
+.contact {
+  border-color: $bg-lighter;
+
+  &--email-link {
+    color: $accent-secondary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .delete-contact {
+    // Large+ the word "delete" is displayed
+    // otherwise just an "X" icon
+    background-color: $accent-secondary;
+    border-radius: 50%;
+    color: $text-lightest;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5em;
+    text-decoration: none;
+    width: 1.5em;
+
+    &:hover, &:active {
+      background-color: darken($accent-secondary, 10%);
+    }
+
+    @media #{$large-up} {
+        display: inline-block;
+        border-radius: 3px;
+        padding: 0 0.5em;
+        text-align: center;
+        width: auto;
+    }
+  }
+}
+.footer{
+  &--outer {
+    background-color: $bg-darkest;
+  }
+  &--meta {
+    // Legal, privacy policy, etc.
+    @extend %legal;
+  }
+  .copyright {
+    color: $text-lighter;
+  }
+  .dc-pride {
+    color: $text-medium;
+  }
+  .dc-flag {
+    height: $font-size-nano;
+    margin-left: $font-size-nano/2;
+  }
+}

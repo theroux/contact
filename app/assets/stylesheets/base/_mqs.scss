@@ -1,0 +1,23 @@
+// A custom hybrid using
+// Foundation's easy-to-grok syntax
+// and Boostrap's popular pixel-based breakpoints
+
+// Usage
+// @media #{$small-up}     { ... }
+// @media #{$small-only}   { ... }
+// @media #{$medium-up}    { ... }
+// @media #{$medium-only}  { ... }
+// @media #{$large-up}     { ... }
+// @media #{$large-only}   { ... }
+// @media #{$xl-up}    { ... }
+
+$screen:       "only screen" !default;
+$landscape:    "#{$screen} and (orientation: landscape)" !default;
+$portrait:     "#{$screen} and (orientation: portrait)" !default;
+$small-up:     $screen !default; // Small-up is our mobile-first default.
+$small-only:   "#{$screen} and (max-width: #{$small-upper})" !default;
+$medium-up:    "#{$screen} and (min-width:#{$medium-lower})" !default;
+$medium-only:  "#{$screen} and (min-width:#{$medium-lower}) and (max-width:#{$medium-upper})" !default;
+$large-up:     "#{$screen} and (min-width:#{$large-lower})" !default;
+$large-only:   "#{$screen} and (min-width:#{$large-lower}) and (max-width:#{$large-upper})" !default;
+$xl-up:   "#{$screen} and (min-width:#{$xl-lower})" !default;

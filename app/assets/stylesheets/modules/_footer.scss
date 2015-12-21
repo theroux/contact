@@ -1,0 +1,15 @@
+.footer {
+  @extend %container-fixed;
+
+  &--outer {
+    padding: 2rem 0;
+  }
+  &--meta {
+    // Legal, privacy policy, etc.
+    text-align: center;
+    
+    @media #{$large-up} {
+        float: right;
+    }
+  }
+}

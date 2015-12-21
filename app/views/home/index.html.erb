@@ -1,40 +1,53 @@
 <% provide(:title, "Dashboard") %>
-<h1>Dashboard - Contactually Lite</h1>
+
 <%= flash[:notice] %>
 
-<div>
-  <h3>Import a CSV File</h3>
+<div class="import--outer">
+  <section class="import">
+  <h3 class="import--heading">Bulk Contacts Upload</h3>
+  <p>We currently support TSV format</p>
+
   <%= form_tag import_contacts_path, multipart: true do %>
     <%= file_field_tag :file %>
-    <%= submit_tag "Import CSV" %>
+    <%= submit_tag "Import TSV" %>
   <% end %>
+  </section>
 </div>
 
-<table id="contact-data">
-  <thead>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email Address</th>
-      <th>Phone Number</th>
-      <th>Extension</th>
-      <th>Company Name</th>
+<div class="filter--outer">
+  <section class="filter">
+    <h3 class="filter--heading">Filters</h3>
+    <p>options</p>
+  </section>
+</div>
 
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="data--outer">
+  <section class="data">
+    <h2 class="data--heading">Contacts</h2>
+    <div class="data--list">
     <% @contacts.each do |contact| %>
-      <tr>
-        <td><%= contact.first_name %></td>
-        <td><%= contact.last_name %></td>
-        <td><%= contact.email_address %></td>
-        <td><%= contact.phone_number %></td>
-        <td><%= contact.extension %></td>
-        <td><%= contact.company_name %>
-        <%= link_to 'Delete', contact, method: 'delete', "data-type" => "json", remote: true, class: 'delete-contact' %>
-      </td>
-      </tr>
+      <div class="contact">
+        <div class="contact--actions">
+          <%= link_to contact, method: 'delete', "data-type" => "json", remote: true, class: 'delete-contact' do %>
+            <span class="icon">&times;</span> <span class="text">delete</span>
+          <% end %>
+        </div>
+        <div class="contact--person">
+          <div  class="contact--name"><%= contact.first_name %> <%= contact.last_name %></div>
+          <div class="contact--company"><%= contact.company_name %></div>
+        </div>
+        <div class="contact--details">
+          <div class="contact--email">
+            <a href="mailto:<%= contact.email_address %>" class="contact--email-link"><%= contact.email_address %></a>
+          </div>
+          <div class="contact--phone">
+            <span class="contact--number"><%= contact.phone_number %></span>
+            <% if contact.extension %><span class="contact--extension">ext. <%= contact.extension %></span><% end %>
+          </div>
+        </div>
+
+      </div>
     <% end %>
-  </tbody>
-</table>
+    </div>
+  </section>
+</div> <!-- end data -->
