@@ -34,10 +34,38 @@
 }
 .contact {
   border-color: $bg-lighter;
+  line-height: 2rem;
+  background-color: rgba($bg-accent-wash, 0.3);
+  border-radius: 5px;
 
+  @media #{$large-up} {
+    background-color: transparent;
+  }
+  //person > name, company
+  &--person {
+    border-color: $text-lighter;
+  }
+  &--name {
+    @extend %heading;
+    font-size: $font-size-larger;
+  }
+  // details > email, phone
+  &--details {
+    line-height: $line-height-baseline;
+
+    @media #{$large-up} {
+      line-height: 2rem;
+    }
+  }
+  &--email {
+  }
   &--email-link {
     color: $accent-secondary;
     text-decoration: none;
+    @media #{$large-up} {
+      position: relative;
+      top: 3px; // magic number-esque hack to maintain cross-typeface vertical rhythm
+    }
 
     &:hover {
       text-decoration: underline;
@@ -49,23 +77,14 @@
     background-color: $accent-secondary;
     border-radius: 50%;
     color: $text-lightest;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 1.5em;
     text-decoration: none;
-    width: 1.5em;
 
     &:hover, &:active {
       background-color: darken($accent-secondary, 10%);
     }
 
     @media #{$large-up} {
-        display: inline-block;
-        border-radius: 3px;
-        padding: 0 0.5em;
-        text-align: center;
-        width: auto;
+      border-radius: 3px;
     }
   }
 }

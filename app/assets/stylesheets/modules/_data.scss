@@ -11,25 +11,34 @@
 }
 .contact {
   border-bottom: 1px solid;
-  margin: 0 0 0.5em 0;
-  padding: 0 0 0.5em 0;
+  margin: 0 0 1.5em 0;
+  padding: 0.5em;
+  @media #{$large-up} {
+    padding: 0 0 1.5em 0;
+  }
+
 
   &--person {
+    border-bottom: 1px solid;
     float: left;
-    padding: 0 0.5em 0 0;
+    padding: 0 0 0.5em;
     width: 90%;
     @media #{$large-up} {
+        border-bottom: 0;
+        padding: 0 0.5em 0 0;
         width: 40%;
     }
 
   }
   &--details {
     float: left;
-    padding: 0 0.5em 0 0;
+    padding: 0.5em 0 0;
+
     width: 90%;
 
     @media #{$large-up} {
-        width: 40%;
+      padding: 0 0.5em 0 0;
+      width: 40%;
     }
   }
   &--actions {
@@ -38,7 +47,24 @@
     width: 10%;
 
 
+
     .delete-contact {
+      float: right;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 1.5em;
+      width: 1.5em;
+
+      @media #{$large-up} {
+          display: inline-block;
+          height: auto;
+          padding: 0 0.5em;
+          text-align: center;
+          width: auto;
+      }
+
       .text {
         display: none;
         @media #{$large-up} {
