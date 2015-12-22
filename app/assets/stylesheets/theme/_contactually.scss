@@ -15,6 +15,37 @@
     font-size: $font-size-larger;
   }
 }
+.form-upload {
+  &--chooser {
+    transition: border 0.2s;
+    background-color: $bg-lightest;
+    border: 2px dashed rgba($accent-secondary, 0.3);
+    border-radius: 5px;
+
+    @media #{$large-up} {
+      border-right: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:hover {
+        border-color: $accent-secondary;
+    }
+  }
+  &--submit {
+    @extend %button;
+    transition: background-color 0.2s;
+    background-color: $accent;
+    @media #{$large-up} {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &:hover {
+        background-color: $accent-shift;
+    }
+  }
+}
 .filter {
   @extend %container-fixed;
 

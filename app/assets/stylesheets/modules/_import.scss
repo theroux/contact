@@ -8,3 +8,29 @@
 
   }
 }
+.form-upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media #{$large-up} {
+      flex-direction: row;
+  }
+
+  &--chooser {
+    cursor: pointer;
+    margin: 0 0 1em 0;
+    padding: 1em;
+    @media #{$large-up} {
+        margin: 1em 0;
+    }
+  }
+  &--submit {
+    border: 0;
+    padding: 1em;
+
+    @media #{$large-up} {
+        margin: 1em 1em 1em 0;
+    }
+  }
+}

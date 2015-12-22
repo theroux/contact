@@ -7,9 +7,9 @@
   <h3 class="import--heading">Bulk Contacts Upload</h3>
   <p>We currently support TSV format</p>
 
-  <%= form_tag import_contacts_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import TSV" %>
+  <%= form_tag import_contacts_path, multipart: true, class: 'form-upload' do %>
+    <%= file_field_tag :file, class: 'form-upload--chooser' %>
+    <%= submit_tag "Upload", class: 'form-upload--submit' %>
   <% end %>
   </section>
 </div>
@@ -17,7 +17,16 @@
 <div class="filter--outer">
   <section class="filter">
     <h3 class="filter--heading">Filters</h3>
-    <p>options</p>
+    <div class="show-only">
+      <p>Show only contacts with&hellip;</p>
+      <button>.com emails</button>
+      <button>international #s</button>
+      <button>#s with extensions</button>
+    </div>
+    <div class="sort-by">
+      <p>Sort alphabetically by&hellip;</p>
+      <button>email</button>
+    </div>
   </section>
 </div>
 
@@ -28,7 +37,11 @@
 
     <div class="data--list">
     <% @contacts.each do |contact| %>
-      <div class="contact">
+      <div class="contact"
+        data-dotcom="<%= contact.dotcom %>"
+        data-international="<%= contact.international %>"
+        data-extension="<%= contact.extension %>"
+      >
         <div class="contact--actions">
           <%= link_to contact, method: 'delete', "data-type" => "json", remote: true, class: 'delete-contact' do %>
             <span class="icon">&times;</span> <span class="text">delete</span>
