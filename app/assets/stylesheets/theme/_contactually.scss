@@ -48,6 +48,10 @@
   &--name {
     @extend %heading;
     font-size: $font-size-larger;
+    @media #{$large-up} {
+      position: relative;
+      top: -3px; // magic number-esque hack to maintain cross-typeface vertical rhythm
+    }
   }
   // details > email, phone
   &--details {
@@ -62,10 +66,6 @@
   &--email-link {
     color: $accent-secondary;
     text-decoration: none;
-    @media #{$large-up} {
-      position: relative;
-      top: 3px; // magic number-esque hack to maintain cross-typeface vertical rhythm
-    }
 
     &:hover {
       text-decoration: underline;
