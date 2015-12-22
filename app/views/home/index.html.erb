@@ -1,6 +1,6 @@
 <% provide(:title, "Dashboard") %>
 
-<%= flash[:notice] %>
+
 
 <div class="import--outer">
   <section class="import">
@@ -24,6 +24,8 @@
 <div class="data--outer">
   <section class="data">
     <h2 class="data--heading">Contacts</h2>
+    <div class="data--alert"><%= flash[:notice] %></div>
+
     <div class="data--list">
     <% @contacts.each do |contact| %>
       <div class="contact">

@@ -20,6 +20,10 @@
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
+    <%= f.label :company_name %><br>
+    <%= f.text_field :company_name %>
+  </div>
+  <div class="field">
     <%= f.label :email_address %><br>
     <%= f.text_field :email_address %>
   </div>
@@ -31,10 +35,17 @@
     <%= f.label :extension %><br>
     <%= f.text_field :extension %>
   </div>
+
   <div class="field">
-    <%= f.label :company_name %><br>
-    <%= f.text_field :company_name %>
+    <%= f.label :dotcom %><br>
+    <%= f.check_box :dotcom %>
   </div>
+
+  <div class="field">
+    <%= f.label :international %><br>
+    <%= f.check_box :international %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
