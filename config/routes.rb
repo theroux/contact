@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
+  root 'home#index'
+
   resources :contacts do
     collection { post :import }
   end
 
-  root to: 'home#index'
 
 end
   # The priority is based upon order of creation: first created -> highest priority.

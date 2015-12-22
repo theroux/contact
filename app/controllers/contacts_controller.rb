@@ -65,9 +65,9 @@ class ContactsController < ApplicationController
   # https://richonrails.com/articles/importing-csv-files
   def import
     # Simple upload w/o validation
-    #Contact.import(params[:file])
-    #redirect_to root_url, notice: "Contacts imported."
-
+    Contact.import(params[:file])
+    redirect_to root_url, notice: "Contacts imported."
+=begin
     #Rejects invalid file types
     begin
      Contact.import(params[:file])
@@ -75,6 +75,7 @@ class ContactsController < ApplicationController
     rescue
       redirect_to root_url, notice: "Invalid TSV file format."
     end
+=end
   end
 
   private
