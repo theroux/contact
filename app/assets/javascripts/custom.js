@@ -40,12 +40,10 @@ var contactLite = (function () {
   },
   _getAlphaPref = function() {
     var sortPref = $alphaButtons.find('.' + selectedClass).data('alpha');
-    console.log(sortPref);
     return sortPref;
   },
   _getSortPref = function() {
     var sortPref = $sortButtons.find('.' + selectedClass).data('sort');
-    console.log(sortPref);
     return sortPref;
   },
   _bindings = function() {
@@ -70,7 +68,6 @@ var contactLite = (function () {
       $(event.target).addClass(selectedClass).prop("disabled", true).siblings().removeClass(selectedClass).prop("disabled", false);
       var attr = _getSortPref(),
       order = _getAlphaPref();
-      console.log(attr, order);
       _sort(attr, order);
     });
   };
@@ -78,8 +75,6 @@ var contactLite = (function () {
   //Public methods
   return {
     init: function () {
-      console.log('init');
-
       // On page load make sure default button is selected
       // this shows dev intent more clearly than hard coding 'is-selected' on back end
       $document.find('.default').addClass(selectedClass);
