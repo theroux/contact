@@ -19,13 +19,28 @@
     <h3 class="filter--heading">Filters</h3>
     <div class="show-only">
       <p>Show only contacts with&hellip;</p>
-      <button>.com emails</button>
-      <button>international #s</button>
-      <button>#s with extensions</button>
+      <div class="show-only--button-group">
+        <button class="show-only--dotcom show-only--button" data-filter="data-dotcom">.com emails</button>
+        <button class="show-only--international  show-only--button" data-filter="data-international">international phone numbers</button>
+        <button class="show-only--extension show-only--button" data-filter="data-extension">phone number extensions</button>
+      </div>
     </div>
     <div class="sort-by">
       <p>Sort alphabetically by&hellip;</p>
-      <button>email</button>
+      <div class="sort-by--buttons-wrap">
+        <div class="sort-by--button-group">
+          <button class="sort-by--email sort-by--button" data-sort="email">email</button>
+          <button class="sort-by--company sort-by--button" data-sort="company">company</button>
+          <button class="sort-by--first sort-by--button" data-sort="first">first name</button>
+          <button class="sort-by--last sort-by--button default" data-sort="last">last name</button>
+        </div>
+        <div class="alpha">
+          <div class="alpha--button-group">
+            <button class="alpha--button default" data-alpha="alpha">A to Z</button>
+            <button class="alpha--button" data-alpha="reverse">Z to A</button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </div>
@@ -36,11 +51,19 @@
     <div class="data--alert"><%= flash[:notice] %></div>
 
     <div class="data--list">
-    <% @contacts.each do |contact| %>
+    <% @contacts.order("last_name asc").each do |contact| %>
       <div class="contact"
         data-dotcom="<%= contact.dotcom %>"
         data-international="<%= contact.international %>"
-        data-extension="<%= contact.extension %>"
+        <% if contact.extension %>
+          data-extension="true"
+        <% else %>
+          data-extension="false"
+        <% end %>
+         data-first="<%= contact.first_name %>"
+         data-last="<%= contact.last_name %>"
+         data-company="<%= contact.company_name %>"
+         data-email="<%= contact.email_address %>"
       >
         <div class="contact--actions">
           <%= link_to contact, method: 'delete', "data-type" => "json", remote: true, class: 'delete-contact' do %>

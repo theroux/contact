@@ -7,6 +7,22 @@
   &--list {
     display: flex;
     flex-direction: column;
+
+    &.data-international {
+      [data-international="false"] {
+        display: none;
+      }
+    }
+    &.data-dotcom {
+      [data-dotcom="false"] {
+        display: none;
+      }
+    }
+    &.data-extension {
+      [data-extension="false"] {
+        display: none;
+      }
+    }
   }
 }
 .contact {

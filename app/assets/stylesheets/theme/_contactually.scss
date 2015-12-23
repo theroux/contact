@@ -17,7 +17,7 @@
 }
 .form-upload {
   &--chooser {
-    transition: border 0.2s;
+    transition: border $transition-speed;
     background-color: $bg-lightest;
     border: 2px dashed rgba($accent-secondary, 0.3);
     border-radius: 5px;
@@ -33,8 +33,8 @@
     }
   }
   &--submit {
-    @extend %button;
-    transition: background-color 0.2s;
+    @extend %button-cta;
+    transition: background-color $transition-speed;
     background-color: $accent;
     @media #{$large-up} {
       border-top-left-radius: 0;
@@ -55,6 +55,40 @@
   &--heading {
     @extend %heading-section;
     font-size: $font-size-larger;
+  }
+
+}
+.show-only {
+  &--button {
+    @extend %button-ui;
+    border: 0;
+    &.is-selected {
+      background-color: red;
+    }
+  }
+
+}
+.sort-by {
+  &--buttons-wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &--button {
+    @extend %button-ui;
+    border: 0;
+    &.is-selected {
+      background-color: orange;
+    }
+  }
+}
+.alpha {
+  &--button {
+    @extend %button-ui;
+    border: 0;
+    &.is-selected {
+      background-color: pink;
+    }
   }
 }
 .data {
@@ -105,6 +139,7 @@
   .delete-contact {
     // Large+ the word "delete" is displayed
     // otherwise just an "X" icon
+    transition: background-color $transition-speed;
     background-color: $accent-secondary;
     border-radius: 50%;
     color: $text-lightest;
