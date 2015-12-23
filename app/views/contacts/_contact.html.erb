@@ -1,0 +1,33 @@
+  <div class="contact"
+    data-dotcom="<%= contact.dotcom %>"
+    data-international="<%= contact.international %>"
+    <% if contact.extension %>
+      data-extension="true"
+    <% else %>
+      data-extension="false"
+    <% end %>
+     data-first="<%= contact.first_name %>"
+     data-last="<%= contact.last_name %>"
+     data-company="<%= contact.company_name %>"
+     data-email="<%= contact.email_address %>"
+  >
+    <div class="contact--actions">
+      <%= link_to contact, method: 'delete', "data-type" => "json", remote: true, class: 'delete-contact' do %>
+        <span class="icon">&times;</span> <span class="text">delete</span>
+      <% end %>
+    </div>
+    <div class="contact--person">
+      <div  class="contact--name"><%= contact.first_name %> <%= contact.last_name %></div>
+      <div class="contact--company"><%= contact.company_name %></div>
+    </div>
+    <div class="contact--details">
+      <div class="contact--email">
+        <a href="mailto:<%= contact.email_address %>" class="contact--email-link"><%= contact.email_address %></a>
+      </div>
+      <div class="contact--phone">
+        <span class="contact--number"><%= contact.phone_number %></span>
+        <% if contact.extension %><span class="contact--extension">ext. <%= contact.extension %></span><% end %>
+      </div>
+    </div>
+
+  </div>

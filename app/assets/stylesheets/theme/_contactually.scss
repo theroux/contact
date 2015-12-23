@@ -14,6 +14,10 @@
     @extend %heading-section;
     font-size: $font-size-larger;
   }
+  .notice {
+    animation: alertFadeOut 3s;
+    font-style: italic;
+  }
 }
 .form-upload {
   &--chooser {
@@ -63,12 +67,13 @@
     @extend %button-ui;
     border: 0;
     &.is-selected {
-      background-color: red;
+      //background-color: red;
     }
   }
 
 }
 .sort-by {
+  padding-top: 1em;
   &--buttons-wrap {
     display: flex;
     justify-content: space-between;
@@ -78,7 +83,7 @@
     @extend %button-ui;
     border: 0;
     &.is-selected {
-      background-color: orange;
+      //background-color: orange;
     }
   }
 }
@@ -87,7 +92,7 @@
     @extend %button-ui;
     border: 0;
     &.is-selected {
-      background-color: pink;
+      //background-color: pink;
     }
   }
 }
@@ -140,13 +145,16 @@
     // Large+ the word "delete" is displayed
     // otherwise just an "X" icon
     transition: background-color $transition-speed;
-    background-color: $accent-secondary;
+    background-color: $bg-lightest;
+    border: 1px solid $accent-secondary;
     border-radius: 50%;
-    color: $text-lightest;
+    color: $accent-secondary;
     text-decoration: none;
 
     &:hover, &:active {
-      background-color: darken($accent-secondary, 10%);
+      background-color: $accent-secondary;
+      //background-color: darken($accent-secondary, 10%);
+      color: $text-lightest;
     }
 
     @media #{$large-up} {

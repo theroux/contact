@@ -10,8 +10,21 @@
 
 %button-ui {
   transition: background-color $transition-speed;
+  background-color: $button-ui-off;
   border-radius: 3px;
+  color: $text-lightest;
   line-height: 2em;
   margin-bottom: 0.5em;
   padding: 0 0.5em;
+
+  &.is-selected {
+    background-color: $button-ui-on;
+  }
+}
+
+
+@keyframes alertFadeOut {
+    from { background-color: rgba(yellow, 0.2);
+ }
+    to   { background-color: transparent; }
 }

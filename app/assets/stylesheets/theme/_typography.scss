@@ -11,6 +11,9 @@ body {
 h1,h2,h3,h4,h5,h6 {
   margin: 0;
 }
+p {
+  margin: 0 0 1em;
+}
 // Helpers
 
 %heading {
@@ -18,7 +21,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 %heading-section {
   @extend %heading;
-  margin: 0.5em 0;
+  margin: 0.5em 0 0.25em;
 }
 %details {
   font-size: $font-size-smaller;

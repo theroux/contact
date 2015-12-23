@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
-    @contacts = Contact.all
+    @contacts = Contact.order('last_name asc')
   end
 
   # GET /contacts/1
@@ -64,10 +64,12 @@ class ContactsController < ApplicationController
 
   # https://richonrails.com/articles/importing-csv-files
   def import
+=begin
     # Simple upload w/o validation
     Contact.import(params[:file])
     redirect_to root_url, notice: "Contacts imported."
-=begin
+=end
+
     #Rejects invalid file types
     begin
      Contact.import(params[:file])
@@ -75,7 +77,7 @@ class ContactsController < ApplicationController
     rescue
       redirect_to root_url, notice: "Invalid TSV file format."
     end
-=end
+
   end
 
   private
