@@ -34,7 +34,6 @@ Use of gems and jQuery is allowed, but no pre-built table-sorting libraries plea
 - Your code should be clear and well-documented.
 
 When you're done, use `git bundle` to bundle up the repo and email it as an attachment
-to **hw@contactually.com**.
-
+to 
 **NOTE:**
 Your application *does not* need to handle authentication or authorization.
